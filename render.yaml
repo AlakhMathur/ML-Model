@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: ml-model-api
+    name: carbon-api
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn ml_server:app --host 0.0.0.0 --port 10000
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.8
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn ml_server:app --host 0.0.0.0 --port 10000"
+    pythonVersion: 3.10.12
+    region: oregon
+    plan: free
+
